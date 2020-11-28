@@ -1,0 +1,9 @@
+{% layout "layouts/main" %}
+{% block content %}
+  <h1>All Users</h1>
+  <ul>
+    {% for user in allUsers %}
+      <li>{{ user.email }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

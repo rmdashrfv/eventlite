@@ -1,4 +1,9 @@
 {% layout "layouts/main" %}
 {% block content %}
   <h1>Signup for Eventlite</h1>
+  <form action="/users/new" method="POST">
+    <input type="email" placeholder="Email" name="email"><br>
+    <input type="password" placeholder="Create a password" name="password"><br>
+    <input type="submit" value="Signup">
+  </form>
 {% endblock %}
