@@ -17,7 +17,7 @@ app.set('view engine', 'liquid') // set the view engine
 app.use(morgan('dev')) // server logging
 
 app.get('/', (req, res) => {
-  res.send('<h1>Welcome to Eventlite</h1>')
+  res.render('pages/home')
 })
 
 app.get('/login', (req, res) => {
