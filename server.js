@@ -25,7 +25,7 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-  res.send('<h1>Signup</h1>')
+  res.render('users/new')
 })
 
 app.get('/users/account', (req, res) => {
@@ -36,8 +36,8 @@ app.get('/events/all', (req, res) => {
   res.send('<h1>All Events</h1>')
 })
 
-app.get('/events/create', (req, res) => {
-  res.send('<h1>Create a new event</h1>')
+app.get('/events/new', (req, res) => {
+  res.send('events/new')
 })
 
 app.listen(port, () => {
