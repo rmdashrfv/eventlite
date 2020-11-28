@@ -1,9 +1,37 @@
 {% layout "layouts/main" %}
 {% block content %}
+{% render "users/new" %}
   <h1>All Users</h1>
-  <ul>
+  <ul id="user-list">
     {% for user in allUsers %}
       <li>{{ user.email }}</li>
     {% endfor %}
   </ul>
+  
+  <script>
+    let userList = document.getElementById('user-list');
+    let form = document.getElementById('signup-form')
+    let emailInput = document.getElementById('email')
+    let passwordInput = document.getElementById('password')
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      let formData = new FormData()
+      formData.append('email', emailInput.value)
+      formData.append('password', passwordInput.value)
+      console.log(emailInput.value)
+      let req = await fetch('/users/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: emailInput.value, password: passwordInput.value})
+      })
+      let res = await req.json()
+      if (req.ok) {
+        let li = document.createElement('li')
+        li.innerText = res.email
+        userList.appendChild(li)
+      }
+    })
+  </script>
 {% endblock %}

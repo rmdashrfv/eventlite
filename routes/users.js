@@ -1,6 +1,8 @@
 const express = require('express') // instantiate express
 const { User } = require('../models')
 const router = express.Router() // create a router object
+const bodyParser = require('body-parser')
+router.use(bodyParser.json()) 
 
 router.get('/login', (req, res) => {
   res.send('<h1>Login</h1>')
@@ -15,13 +17,9 @@ router.post('/users/new', async (req, res) => {
   let email = req.body.email
   let password = req.body.password
   let user = User.build({email: email, password: password})
-  let userWasSaved = await user.save()
-  if (userWasSaved) {
-    res.render('users/account', {user: user})
-  } else {
-    console.log('Error', userWasSaved)
-    res.send({message: 'error'})
-  }
+  await user.save()
+  res.status(200).json({email: email})
+  // need to handle errors as well
 })
 
 router.get('/users/account/:id', async (req, res) => {
