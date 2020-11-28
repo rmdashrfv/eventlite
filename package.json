@@ -1,0 +1,31 @@
+{
+  "name": "eventlite",
+  "version": "1.0.0",
+  "description": "A marketplace for events",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "liquidjs": "^9.16.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5",
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmdashrfv/eventlite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmdashrfv/eventlite/issues"
+  },
+  "homepage": "https://github.com/rmdashrfv/eventlite#readme"
+}
