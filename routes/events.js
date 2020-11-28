@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/events/all', (req, res) => {
-  res.send('<h1>All Events</h1>')
+  res.render('events/all')
 })
 
 router.get('/events/new', (req, res) => {
-  res.send('events/new')
+  res.render('events/new')
 })
 
 module.exports = router

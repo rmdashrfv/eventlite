@@ -5,7 +5,7 @@ router.get('/login', (req, res) => {
   res.send('<h1>Login</h1>')
 })
 
-router.get('/signup', (req, res) => {
+router.get('/users/new', (req, res) => {
   res.render('users/new')
 })
 
